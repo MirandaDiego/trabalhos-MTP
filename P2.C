@@ -22,11 +22,11 @@ int  conv2oct ( int num, int b)
 
     {
 
-        aux + = (num% b) * i;
+        aux += (num% b) * i;
 
-        num / = b;
+        num /= b;
 
-        i * = 10 ;
+        i *= 10 ;
 
     }
 
@@ -40,7 +40,7 @@ void  conv2hex ( int num, int b, int menu)
 
 	int i = 0 , j = 0 , k = 0 , aux = 0 , n = 0 ;
 
-	char hex [ 256 ], temp [ 256 ];
+	char hex[256], temp[256];
 
 	k = num;
 
@@ -52,13 +52,13 @@ void  conv2hex ( int num, int b, int menu)
 
 		if(aux < 10 )
 
-			temp [j ++] = 48 + aux;
+			temp[j++] = 48 + aux;
 
 		else
 
-		    temp [j ++] = 55 + aux;
+		    temp[j++] = 55 + aux;
 
-		k = k / b;
+		k = k/b;
 
 		n ++;
 
@@ -68,9 +68,9 @@ void  conv2hex ( int num, int b, int menu)
 
 		hex [j] = temp [i];
 
-	hex [n] = ' \ 0 ' ;
+	hex [n] = ' \0 ' ;
 
-	printf ( " \ n | \" % i \ " + \" % i \ " | \" % s \ " | \ n " , menu, num, hex);
+	printf ( " \n | \" %i \ " + \" %i \ " | \" %s \ " | \ n " , menu, num, hex);
 
 }
 
@@ -80,7 +80,7 @@ int  conv2dec ( char bits [], int b)
 
 	int i = 0 , aux = 0 ;
 
-	for (i = 0 ; bits [i]! = ' \ 0 ' ; i ++)
+	for (i = 0 ; bits [i]! = ' \0 ' ; i ++)
 
 	{
 
@@ -158,7 +158,7 @@ int  conv2bin ( int num, int b)
 
 	}
 
-	for (i = 0 ; bin [i]! = ' \ 0 ' ; i ++)
+	for (i = 0 ; bin [i]!= ' \0 ' ; i ++)
 
 	{
 
@@ -180,7 +180,7 @@ int  main ()
 
 {
 
-	bits de char [ 256 ];
+	bits de char[256];
 
 	int menu = 0 , b = 0 , cv = 0 , num = 0 , teste = 0 ;
 
@@ -188,9 +188,9 @@ int  main ()
 
 	{
 
-		printf ( " \ n Escolha uma conversao: \ n [1] Binario para Decimal \ n [2] Binario para Hexadecimal \ n [3] Hexadecimal para Decimal \ n [4] Hexadecimal para Binario \ n [5] Decimal para Binario \ n [6] Decimal para Hexadecimal \ n [7] Octal para Decimal \ n [8] Decimal para Octal \ n [9] Sair do programa \ n : " );
+		printf ( " \n Escolha uma conversao: \n [1] Binario para Decimal \n [2] Binario para Hexadecimal \n [3] Hexadecimal para Decimal \n [4] Hexadecimal para Binario \n [5] Decimal para Binario \n [6] Decimal para Hexadecimal \n [7] Octal para Decimal \n [8] Decimal para Octal \n [9] Sair do programa \n : " );
 
-		scanf ( " % i " , & menu);
+		scanf ( " %i " , &menu);
 
 		interruptor (menu)
 
@@ -204,7 +204,7 @@ int  main ()
 
                 cv = conv2dec (bits, b);
 
-				printf ( " \ n | \" % i \ " + \" % s \ " | \" % i \ " | \ n " , menu, bits, cv);
+				printf ( " \n | \" %i \ " + \" %s \ " | \" %i \ " | \n " , menu, bits, cv);
 
 				pause ;
 
@@ -230,9 +230,9 @@ int  main ()
 
                 cv = conv2dec (bits, b);
 
-				printf ( " \ n | \" % i \ " + \" % s \ " | \" % i \ " | \ n " , menu, bits, cv);
+				printf ( " \n | \" %i \ " + \" %s \ " | \" %i \ " | \n " , menu, bits, cv);
 
-				pausa ;
+				pause ;
 
 			case  4 : // Hex -> Bin
 
@@ -246,23 +246,23 @@ int  main ()
 
 				cv = conv2bin (num, b);
 
-				printf ( " \ n | \" % i \ " + \" % s \ " | \" % i \ " | \ n " , menu, bits, cv);
+				printf ( " \n | \" %i \ " + \" %s \ " | \" %i \ " | \n " , menu, bits, cv);
 
 				num = 0 ;
 
-				pausa ;
+				pause ;
 
 			case  5 : // Dec -> Bin
 
 				b = 10 ;
 
-				printf ( " \ n Preencha com valor o um convertido ser: " );
+				printf ( " \n Preencha com valor o um convertido ser: " );
 
-	            scanf ( " % i " , & num);
+	            scanf ( " %i " , & num);
 
                 cv = conv2bin (num, b);
 
-				printf ( " \ n | \" % i \ " + \" % i \ " | \" % i \ " | \ n " , menu, num, cv);
+				printf ( " \n | \"%i \ " + \" %i \ " | \" %i \ " | \n " , menu, num, cv);
 
 				pause ;
 
@@ -270,9 +270,9 @@ int  main ()
 
 			    b = 16 ;
 
-			    printf ( " \ n Preencha com valor o um convertido ser: " );
+			    printf ( " \n Preencha com valor o um convertido ser: " );
 
-	            scanf ( " % i " , & num);
+	            scanf ( " %i " , & num);
 
                 conv2hex (num, b, menu);
 
@@ -286,7 +286,7 @@ int  main ()
 
                 cv = conv2dec (bits, b);
 
-				printf ( " \ n | \" % i \ " + \" % s \ " | \" % i \ " | \ n " , menu, bits, cv);
+				printf ( " \n | \" %i \ " + \" %s \ " | \" %i \ " | \n " , menu, bits, cv);
 
 				pause ;
 
@@ -294,15 +294,15 @@ int  main ()
 
 			    b = 8 ;
 
-			    printf ( " \ n Preencha com valor o um convertido ser: " );
+			    printf ( " \n Preencha com valor o um convertido ser: " );
 
-            	scanf ( " % i " , & num);
+            	scanf ( " %i " , &num);
 
 			    cv = conv2oct (num, b);
 
-			    printf ( " \ n | \" % i \ " + \" % i \ " | \" % i \ " | \ n " , menu, num, cv);
+			    printf ( " \n | \" %i \ " + \" %i \ " | \" %i \ " | \n " , menu, num, cv);
 
-				pausa ;
+				pause ;
 
 			padrão :
 
@@ -310,7 +310,7 @@ int  main ()
 
 			    {
 
-			    	printf ( " \ n \ n Escolha invalida \ n \ n " );
+			    	printf ( " \n \n Escolha invalida \n \n " );
 
 			        pause ;
 
