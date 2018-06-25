@@ -1,4 +1,4 @@
-# include  < stdio.h >
+# include<stdio.h>
 
 int  A ( int m, int n)
 
