@@ -10,12 +10,12 @@ int  main ()
 {
 	int tam;
 
-	printf ( " digite os numeros: \ n " );
+	printf ( " digite os numeros: \n " );
 	scanf ( " % i " , & tam);	
 	getchar ();
 
 	int i, val [tam];
-	printf ( " digite os valores: \ n " );
+	printf ( " digite os valores: \n " );
 	para (i = 0 ; i <tam; i ++)
 
 	{
@@ -24,7 +24,7 @@ int  main ()
 	}
 
 	int * primeiro = val, * last = val + tam- 1 ;
-	printf ( " \ n media =% f \ n " , ( float ) soma (primeiro, ultimo) / tam);
+	printf ( " \n media =% f \n " , ( float ) soma (primeiro, ultimo) / tam);
 
 	return  0 ;
 }
