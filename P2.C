@@ -1,4 +1,4 @@
-# include  < stdio.h >
+#include  < stdio.h >
 
 
 
@@ -6,7 +6,7 @@
 
 {
 
-	printf ( " \ n Preencha com valor o um convertido ser: " );
+	printf ( " \n Preencha com valor o um convertido ser: " );
 
 	scanf ( " % s " , bits);
 
@@ -18,7 +18,7 @@ int  conv2oct ( int num, int b)
 
     int aux = 0 , i = 1 ;
 
-    enquanto (num! = 0 )
+    while(num! = 0 )
 
     {
 
@@ -44,17 +44,17 @@ void  conv2hex ( int num, int b, int menu)
 
 	k = num;
 
-	enquanto (k! = 0 )
+	while (k! = 0 )
 
 	{
 
 		aux = k% b;
 
-		se (aux < 10 )
+		if(aux < 10 )
 
 			temp [j ++] = 48 + aux;
 
-		outro
+		else
 
 		    temp [j ++] = 55 + aux;
 
@@ -64,7 +64,7 @@ void  conv2hex ( int num, int b, int menu)
 
 	}
 
-	para (i = n- 1 , j = 0 ; i + 1 ! = 0 ; --i, ++ j)
+	for(i = n- 1 , j = 0 ; i + 1 ! = 0 ; --i, ++ j)
 
 		hex [j] = temp [i];
 
@@ -80,7 +80,7 @@ int  conv2dec ( char bits [], int b)
 
 	int i = 0 , aux = 0 ;
 
-	para (i = 0 ; bits [i]! = ' \ 0 ' ; i ++)
+	for (i = 0 ; bits [i]! = ' \ 0 ' ; i ++)
 
 	{
 
@@ -108,7 +108,7 @@ int  conv2dec ( char bits [], int b)
 
 				}
 
-    	        outro
+    	        else
 
         	        aux = aux * b + (bits [i] - ' 7 ' );
 
@@ -130,9 +130,9 @@ int  conv2bin ( int num, int b)
 
 	inti = 0 , j = 0 , k = 1 , n = 0 , aux = 0 , aux2;
 
-	para (n = 0 ; num> = ( 1 << n); n ++);
+	for (n = 0 ; num> = ( 1 << n); n ++);
 
-	para (i = 1 ; i <= n; i ++)
+	for (i = 1 ; i <= n; i ++)
 
 	{
 
@@ -146,7 +146,7 @@ int  conv2bin ( int num, int b)
 
 		}
 
-		outro
+		else
 
 		{
 
@@ -158,13 +158,13 @@ int  conv2bin ( int num, int b)
 
 	}
 
-	para (i = 0 ; bin [i]! = ' \ 0 ' ; i ++)
+	for (i = 0 ; bin [i]! = ' \ 0 ' ; i ++)
 
 	{
 
 		k = 1 ;
 
-		para (j = 1 ; j <(ni); j ++)
+		for (j = 1 ; j <(ni); j ++)
 
 		    k = k * b;
 
@@ -184,7 +184,7 @@ int  main ()
 
 	int menu = 0 , b = 0 , cv = 0 , num = 0 , teste = 0 ;
 
-	Faz
+	do
 
 	{
 
@@ -206,7 +206,7 @@ int  main ()
 
 				printf ( " \ n | \" % i \ " + \" % s \ " | \" % i \ " | \ n " , menu, bits, cv);
 
-				pausa ;
+				pause ;
 
 			case  2 : // Bin -> Hex
 
@@ -220,7 +220,7 @@ int  main ()
 
                 conv2hex (num, b, menu);
 
-				pausa ;
+				pause ;
 
 			case  3 : // Hex -> Dec
 
@@ -264,7 +264,7 @@ int  main ()
 
 				printf ( " \ n | \" % i \ " + \" % i \ " | \" % i \ " | \ n " , menu, num, cv);
 
-				pausa ;
+				pause ;
 
 			case  6 : // Dec -> Hex
 
@@ -288,9 +288,9 @@ int  main ()
 
 				printf ( " \ n | \" % i \ " + \" % s \ " | \" % i \ " | \ n " , menu, bits, cv);
 
-				pausa ;
+				pause ;
 
-			caso  8 : // Dez -> Oc
+			case  8 : // Dez -> Oc
 
 			    b = 8 ;
 
@@ -304,22 +304,21 @@ int  main ()
 
 				pausa ;
 
-			padr„o :
+			padr√£o :
 
-			    se (menu! = 9 )
+			    if (menu! = 9 )
 
 			    {
 
 			    	printf ( " \ n \ n Escolha invalida \ n \ n " );
 
-			        pausa ;
+			        pause ;
 
 				}
 
 		}
 
-	} enquanto (menu! = 9 );
-
+	} while (menu! = 9 );
 	return  0 ;
 
 }
