@@ -6,8 +6,8 @@ int  main ()
 	char msg [ 256 ], * pmsg;
 
 	para (i = 0 ; i < 256 ; i ++) msg[i] = ' \0 ' ;
-	printf ( " \ t 1Codificar \n \t 2Decodificar \n \t Escolha uma: " );
-	scanf ( " % d " , & j);
+	printf ( " \t 1Codificar \n \t 2Decodificar \n \t Escolha uma: " );
+	scanf ( " %d " , &j);
 	getchar ();
 
 	interruptor (j)
@@ -21,8 +21,8 @@ int  main ()
 
 			para (i = 0 ; msg [i]; i ++) {
 				pnum = ( int *) pmsg;
-				if (pnum [i]! = 0 ) printf ( " % d " , pnum [i]);
-				if (pnum [i + 1 ]! = 0 ) printf ( " , " );}
+				if (pnum [i]!= 0 ) printf ( " %d " , pnum [i]);
+				if (pnum [i + 1 ]!= 0 ) printf ( " , " );}
 			pausa ;
 		}
 
@@ -32,13 +32,13 @@ int  main ()
 
 			para (i = 0 ; i < 64 ; i ++)
 			 {
-				printf ( " \t n% d: \t  " , i + 1 ); scanf ( " %d " , & num [i]);
+				printf ( " \n%d: \n  " , i + 1 ); scanf ( " %d " , & num [i]);
 				pmsg = ( char *) num;
 				if (num [i] == 0 )
 				pausa ;
 			 }
 
-			 printf ( " \n \n \t Frase decodificada:% s " , pmsg);
+			 printf ( " \n \n \n Frase decodificada:% s " , pmsg);
 	    }
 
 	}
