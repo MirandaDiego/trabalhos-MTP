@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-void bits(unsigned int numero, int t) //função criada 
+void bits(unsigned int numero, int t) //funÃ§Ã£o criada 
 {
-	if(t != 0) //condição imposta
+	if(t != 0) //condiÃ§Ã£o imposta
 	{
 	bits(numero/2, t-1);// divide numero por 2, t faz andar na string
-	printf("%d", (numero % 2));//mostra o resto da divisão feita acima 
+	printf("%d", (numero % 2));//mostra o resto da divisÃ£o feita acima 
 	}	
 }
 int main()
@@ -19,7 +19,7 @@ int main()
 		case 1:
 			printf("\n Digite o numero: ");//recebe valor
 			scanf("%d", &x);//guarda o valor e x
-			getchar(); // lê um caracter e retorna um inteiro
+			getchar(); // lÃª um caracter e retorna um inteiro
 			printf("\n ARGUMENTO NOT %d", x);
 			printf("[");
 			bits(x, 32); //chama a conta (numero/2, t-1)
@@ -27,20 +27,20 @@ int main()
 			resultado=~x; //usa a porta not
 			printf(" : %d", resultado);
 			printf("[");
-			bits(resultado, 32);// chama a conta da função bits (o numero 32 e o numero maximo a ser usado de bits)
+			bits(resultado, 32);// chama a conta da funÃ§Ã£o bits (o numero 32 e o numero maximo a ser usado de bits)
 			printf("]");
 			break;//parada 
 			//o mesmo pensamento se seque para as outras portas logicas 
 		case 2:
 			printf("\n Digite o numero: ");//pega o numero
 			scanf("%d", &x);//guarda o valor acima em x 
-			getchar();//lê e retorna como inteiro
+			getchar();//lÃª e retorna como inteiro
 			printf(" Digite o segundo numero: ");
 			scanf("%d", &y);//guarda o valor acima em y
 			getchar();
 			printf("\n\n%d", x );
 			printf("[");
-			bits(x, 32);//chama a conta da função bits
+			bits(x, 32);//chama a conta da funÃ§Ã£o bits
 			printf("]");
 			printf(" ARGUMENTO AND %d", y);
 			printf("[");
