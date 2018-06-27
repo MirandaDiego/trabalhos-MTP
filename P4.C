@@ -1,28 +1,43 @@
-# include<stdio.h>
+//Diego Miranda Duarte 11711EAU019
 
-int  main ()
+#include <stdio.h>
+
+int potencia(int num)
 {
-    int i = 0 ;
-	int cumulativa = 0 ;
-	bits de char [ 256 ];  
-	scanf ( " %s " , bits);
-	getchar ();
+	if (num == 0)
+		return 1;
 
-	while (bits [i])
+	int res = 1;
+	for (int i = 0; i < num; i++)
 	{
-
-		if (bits [i]> = 48 && bits [i] <= 57 ) // verifica se o caractere atual é um algarismo
-		{
-			bits [i] = bits [i] - ' 0 ' ; // converte char para int
-
-			cumulativa = cumulativa * 10 + bits [i]; // compõe o numero usando cada algarismo
-
-		}
-
-		i ++;
+		res = res * 10;
 	}
-	printf ( " \n numero digitado e:%d " , cumulativa);
-	getch ();
+	return res;
+}
+int main()
+{
+	char numero_str[256];
+	int numero_int = 0;
+	int tam = 0, i = 0, j = 0;
 
-	return  0 ;
+	printf("Digite o numero: ");
+	scanf("%s", numero_str);
+
+	// descobre o tamanho da string
+	while (numero_str[i] != '\0')
+	{
+		tam++;
+		i++;
+	}
+
+	for (i = tam - 1; i >= 0; i--)
+	{
+		if ((int)numero_str[i] < 48 || (int)numero_str[i] > 57)
+		{
+			continue;
+		}
+		numero_int += ((int)numero_str[i] - 48) * potencia(j);
+		j++;
+	}
+	printf("\nNumero inteiro: %d\n\n", numero_int);
 }
