@@ -2,6 +2,7 @@
 
 int main ()
 {
+	printf("Digite um numero:");
 	int est = 0, i = 0;
 	char bits[256];
 	scanf("%s", &bits[i]);
@@ -40,14 +41,14 @@ int main ()
 	}
 	if (est == 0)
 	{
-		printf("\nE multiplo de 3. \n\n");
+		printf("\nE multiplo de 3. ");
 	}
 		if (est != 0)
 	{
-		printf("\nNao e multiplo de 3. \n\n");
+		printf("\nNao e multiplo de 3. ");
 	}
-	printf("\nA sequencia original e: %s\n\n", bits);
-	printf("\nO estado e igual a: %d\n\n", est);
+	printf("\nA sequencia original e: %s", bits);
+	printf("\nO estado e igual a: %d", est);
 	
 	return 0;
 }
