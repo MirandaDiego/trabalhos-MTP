@@ -1,3 +1,5 @@
+//Diego Miranda Duarte 11711EAU019
+
 #include <stdio.h>
 
 void bits(unsigned int numero, int t) //função criada 
