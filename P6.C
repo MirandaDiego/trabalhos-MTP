@@ -1,30 +1,48 @@
-#include<stdio.h>
+//Diego Miranda Duarte 11711EAU019
 
-int  soma ( int * pt, int * pz)
-{	
-	retorno (* pz) + ((pz == pt)? 0 : soma (pt, pz- 1 ));
-}
-
-int  main ()
+#include <stdio.h>
+int sm(int len, int *v)
 
 {
-	int tam;
 
-	printf ( " digite os numeros: \n " );
-	scanf ( " % i " , & tam);	
-	getchar ();
+   if(len>0)
 
-	int i, val [tam];
-	printf ( " digite os valores: \n " );
-	para (i = 0 ; i <tam; i ++)
+        return *v+sm(len-1, v+1);
 
-	{
-	   scanf ( " % i " e val [i]);	
-       getchar ();
-	}
+    else
 
-	int * primeiro = val, * last = val + tam- 1 ;
-	printf ( " \n media =% f \n " , ( float ) soma (primeiro, ultimo) / tam);
+        return 0.0;
 
-	return  0 ;
+}
+
+float med(int x, int y)
+
+{
+
+    return (float)x/(float)y;
+
+}
+
+int main ()
+
+{
+
+	int vet[]={0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0};
+
+	int tam=0, i=0;
+
+	printf("Quantidade a ser somada:\n");
+
+	scanf("%d", &tam);
+
+	printf("\nValores: \n");
+
+	for (i=0; i<tam; i++)
+ 
+		scanf("%d", &vet[i]);
+
+	printf("\nmedia = %f", med(sm(tam, vet), tam));
+
+	return 0;
+
 }
